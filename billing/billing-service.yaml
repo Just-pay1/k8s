@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: billing-service
+  namespace: justpay
+  labels:
+    project: justpay
+spec:
+  selector:
+    app: billing
+  ports:
+    - port: 80
+      targetPort: 3001

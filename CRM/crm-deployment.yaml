@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crm
+  namespace: justpay
+  labels:
+    project: justpay
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: crm
+  template:
+    metadata:
+      labels:
+        app: crm
+        project: justpay
+    spec:
+      containers:
+        - name: crm
+          image: justpayACR1.azurecr.io/crm:latest
+          ports:
+            - containerPort: 3003
+      imagePullSecrets:
+        - name: macr-auth  # Only needed for non-AKS clusters
+---

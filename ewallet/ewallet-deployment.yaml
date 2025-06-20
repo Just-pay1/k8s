@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ewallet
+  namespace: justpay
+  labels:
+    project: justpay
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ewallet
+  template:
+    metadata:
+      labels:
+        app: ewallet
+        project: justpay
+    spec:
+      containers:
+        - name: ewallet
+          image: justpayACR1.azurecr.io/ewallet:latest
+          ports:
+            - containerPort: 3002
+      imagePullSecrets:
+        - name: macr-auth  # Only needed for non-AKS clusters
+---
