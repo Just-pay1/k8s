@@ -6,7 +6,7 @@ metadata:
   labels:
     project: justpay
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: billing
@@ -21,6 +21,6 @@ spec:
           image: justpayACR1.azurecr.io/billing:latest
           ports:
             - containerPort: 3001
-      imagePullSecrets:
-        - name: macr-auth  # Only needed for non-AKS clusters
+#      imagePullSecrets:
+#        - name: macr-auth  # Only needed for non-AKS clusters
 ---
