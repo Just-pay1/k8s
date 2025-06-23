@@ -6,7 +6,7 @@ metadata:
   labels:
     project: justpay
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: identity
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: identity
-          image: justpay.azurecr.io/identity:latest
+          image: justpayACRaks.azurecr.io/identity:latest
           ports:
             - containerPort: 3000
           # readinessProbe:
@@ -33,7 +33,7 @@ spec:
           #     port: 3000
           #   initialDelaySeconds: 15
           #   periodSeconds: 20
-      imagePullSecrets:
-        - name: eacr-auth
+      # imagePullSecrets:
+      #   - name: eacr-auth
 ---
 

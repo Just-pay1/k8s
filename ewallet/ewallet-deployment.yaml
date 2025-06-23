@@ -6,7 +6,7 @@ metadata:
   labels:
     project: justpay
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: ewallet
@@ -18,9 +18,9 @@ spec:
     spec:
       containers:
         - name: ewallet
-          image: justpayACR1.azurecr.io/ewallet:latest
+          image: justpayACRaks.azurecr.io/ewallet:latest
           ports:
             - containerPort: 3002
-      imagePullSecrets:
-        - name: macr-auth  # Only needed for non-AKS clusters
+      # imagePullSecrets:
+      #   - name: macr-auth  # Only needed for non-AKS clusters
 ---

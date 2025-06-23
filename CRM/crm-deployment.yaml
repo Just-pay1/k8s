@@ -6,7 +6,7 @@ metadata:
   labels:
     project: justpay
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: crm
@@ -18,9 +18,9 @@ spec:
     spec:
       containers:
         - name: crm
-          image: justpayACR1.azurecr.io/crm:latest
+          image: justpayACRaks.azurecr.io/crm:latest
           ports:
             - containerPort: 3003
-      imagePullSecrets:
-        - name: macr-auth  # Only needed for non-AKS clusters
+      # imagePullSecrets:
+      #   - name: macr-auth  # Only needed for non-AKS clusters
 ---
