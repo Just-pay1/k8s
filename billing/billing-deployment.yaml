@@ -18,9 +18,9 @@ spec:
     spec:
       containers:
         - name: billing
-          image: justpayACR1.azurecr.io/billing:latest
+          image: justpayACRaks.azurecr.io/billing:latest
           ports:
-            - containerPort: 3001
+            - containerPort: 4000
 #      imagePullSecrets:
 #        - name: macr-auth  # Only needed for non-AKS clusters
 ---
