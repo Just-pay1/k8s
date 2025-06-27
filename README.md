@@ -1,14 +1,14 @@
 
-## ui.justpay.local
+## http://ui.justpay.local
 
-## prometheus.justpay.local
+## http://prometheus.justpay.local
 
-## grafana.justpay.local
+## http://grafana.justpay.local
 user: admin
 
 pass: prom-operator
 
-## argocd.justpay.local
+## http://argocd.justpay.local
 user : admin
 
 pass: qYuXUTM7sebHiQ9-
