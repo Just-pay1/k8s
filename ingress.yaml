@@ -3,29 +3,50 @@ kind: Ingress
 metadata:
   name: justpay-ingress
   namespace: justpay
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  # annotations:
+  #   nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx  
   rules:
-    - host: justpay.local
+    - host: ui.justpay.local
       http:
         paths:
-          - path: /billing
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: justpayui-service
+                port:
+                  number: 80
+    - host: billing.justpay.local
+      http:
+        paths:
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: billing-service
                 port:
                   number: 80
+    - host: crm.justpay.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: crm-service
+                port:
+                  number: 80
 
-    # - host: justpay.local
+    # - host: identity.justpay.local
     #   http:
     #     paths:
-    #       - path: /identity
+    #       - path: /
     #         pathType: Prefix
     #         backend:
     #           service:
     #             name: identity-service
     #             port:
     #               number: 80
+

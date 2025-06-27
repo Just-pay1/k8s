@@ -20,7 +20,7 @@ spec:
         - name: crm
           image: justpayACRaks.azurecr.io/crm:latest
           ports:
-            - containerPort: 3003
+            - containerPort: 5000
       # imagePullSecrets:
       #   - name: macr-auth  # Only needed for non-AKS clusters
 ---

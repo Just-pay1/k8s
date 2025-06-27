@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: crm-service
+  name: justpayui-service
   namespace: justpay
   labels:
     project: justpay
 spec:
   selector:
-    app: crm
+    app: justpayui
   ports:
     - port: 80
-      targetPort: 5000
+      targetPort: 3000
