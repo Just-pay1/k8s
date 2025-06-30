@@ -3,12 +3,12 @@ kind: Ingress
 metadata:
   name: justpay-ingress
   namespace: justpay
-  # annotations:
-  #   nginx.ingress.kubernetes.io/rewrite-target: /
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx  
   rules:
-    - host: ui.justpay.local
+    - host: justpay.duckdns.org
       http:
         paths:
           - path: /
@@ -28,7 +28,7 @@ spec:
                 name: billing-service
                 port:
                   number: 80
-    - host: crm.justpay.local
+    - host: crm-justpay.duckdns.org
       http:
         paths:
           - path: /
@@ -36,6 +36,17 @@ spec:
             backend:
               service:
                 name: crm-service
+                port:
+                  number: 80
+
+    - host: mail-justpay.duckdns.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mail-service
                 port:
                   number: 80
 
@@ -50,3 +61,7 @@ spec:
     #             port:
     #               number: 80
 
+  tls:
+  - hosts:
+    - justpay.duckdns.org
+    secretName: letsencrypt-prod
