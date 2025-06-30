@@ -1,4 +1,6 @@
 
+# ingress secured version of services accessable from outside of cluster
+
 ## https://justpay.duckdns.org
 
 ## https://prometheus-justpay.duckdns.org
@@ -14,3 +16,4 @@ user : admin
 pass: qYuXUTM7sebHiQ9-
 
 ## https://sonarqube-justpay.duckdns.org
+
