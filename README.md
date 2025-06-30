@@ -1,14 +1,16 @@
 
-## http://ui.justpay.local
+## https://justpay.duckdns.org
 
-## http://prometheus.justpay.local
+## https://prometheus-justpay.duckdns.org
 
-## http://grafana.justpay.local
+## https://grafana-justpay.duckdns.org
 user: admin
 
 pass: prom-operator
 
-## http://argocd.justpay.local
+## https://argocd-justpay.duckdns.org
 user : admin
 
 pass: qYuXUTM7sebHiQ9-
+
+## https://sonarqube-justpay.duckdns.org
