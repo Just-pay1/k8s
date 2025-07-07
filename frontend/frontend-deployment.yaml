@@ -18,9 +18,9 @@ spec:
     spec:
       containers:
         - name: justpayui
-          image: justpayACRaks.azurecr.io/justpayui:latest
+          image: justpayacrAKS1.azurecr.io/justpayui:latest
           env:
-            - name: BACKEND_URL
+            - name: NEXT_PUBLIC_BACKEND_SERVER
               value: "http://crm:5000"
           ports:
             - containerPort: 3000

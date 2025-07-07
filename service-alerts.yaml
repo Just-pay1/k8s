@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: identity-service-alerts
+  namespace: kube-prometheus-stack
+spec:
+  groups:
+  - name: identity-service.rules
+    rules:
+    - alert: IdentityServiceDown
+      expr: up{job="identity-service", namespace="justpay"} == 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Identity Service is Down"
+        description: "The Identity Service ({{ $labels.instance }}) is down for more than 1 minute."

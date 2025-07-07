@@ -18,16 +18,16 @@ spec:
     spec:
       containers:
         - name: crm
-          image: justpayACRaks.azurecr.io/crm:latest
-          env:
-            - name: RABBITMQ_IP
-              value: "rabbitmq.rabbitmq.svc.cluster.local:5672"
-            - name: RABBITMQ_PORT
-              value: "5672"
-            - name: RABBITMQ_USERNAME
-              value: "user"
-            - name: RABBITMQ_PASSWORD
-              value: "justpay"
+          image: justpayacrAKS1.azurecr.io/crm:latest
+          # env:
+          #   - name: RABBITMQ_IP
+          #     value: "rabbitmq.rabbitmq.svc.cluster.local"
+          #   - name: RABBITMQ_PORT
+          #     value: "5671"
+          #   - name: RABBITMQ_USERNAME
+          #     value: "user"
+          #   - name: RABBITMQ_PASSWORD
+          #     value: "justpay"
           ports:
             - containerPort: 5000
       # imagePullSecrets:

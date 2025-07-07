@@ -9,5 +9,6 @@ spec:
   selector:
     app: mail
   ports:
-    - port: 80
-      targetPort: 4000
+    - name: mailport
+      port: 80
+      targetPort: 5200
