@@ -18,48 +18,6 @@ spec:
                 name: justpayui-service
                 port:
                   number: 80
-    - host: billing.justpay.local
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: billing-service
-                port:
-                  number: 80
-    - host: crm-justpay.duckdns.org
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: crm-service
-                port:
-                  number: 80
-
-    - host: mail-justpay.duckdns.org
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: mail-service
-                port:
-                  number: 80
-
-    # - host: identity.justpay.local
-    #   http:
-    #     paths:
-    #       - path: /
-    #         pathType: Prefix
-    #         backend:
-    #           service:
-    #             name: identity-service
-    #             port:
-    #               number: 80
 
   tls:
   - hosts:
