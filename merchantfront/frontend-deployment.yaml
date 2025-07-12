@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: merchantfront
-          image: justpayacrAKS1.azurecr.io/merchantfront:latest
+          image: justpayacrAKS1.azurecr.io/merchantui:latest
           ports:
             - containerPort: 3000
       # imagePullSecrets:
