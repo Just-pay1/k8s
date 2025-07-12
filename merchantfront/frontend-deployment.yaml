@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: merchantfront
+  namespace: justpay
+  labels:
+    project: justpay
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: merchantfront
+  template:
+    metadata:
+      labels:
+        app: merchantfront
+        project: justpay
+    spec:
+      containers:
+        - name: merchantfront
+          image: justpayacrAKS1.azurecr.io/merchantfront:latest
+          ports:
+            - containerPort: 3000
+      # imagePullSecrets:
+      #   - name: acr-auth  # Only needed for non-AKS clusters

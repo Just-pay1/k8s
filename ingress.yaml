@@ -18,8 +18,18 @@ spec:
                 name: justpayui-service
                 port:
                   number: 80
-
+    - host: merchant-justpay.duckdns.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: merchantfront-service
+                port:
+                  number: 80
   tls:
   - hosts:
     - justpay.duckdns.org
+    - merchant-justpay.duckdns.org
     secretName: letsencrypt-prod
